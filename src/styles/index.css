@@ -1,0 +1,7 @@
+:root {
+  --whiteFade: #fafafa;
+}
+
+.App {
+  background-color: var(--whiteFade);
+}
