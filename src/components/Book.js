@@ -28,7 +28,7 @@ const Book = (props) => {
                 <button
                   type="button"
                   className={styles.actionButtons}
-                  onClick={() => dispatch(removeBook(book.id))}
+                  onClick={() => dispatch(removeBook(book.item_id))}
                 >
                   Remove
                 </button>
@@ -59,7 +59,7 @@ Book.propTypes = {
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     author: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     category: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    item_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }).isRequired,
 };
 

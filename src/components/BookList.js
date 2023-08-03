@@ -10,7 +10,7 @@ const BookList = () => {
     <div>
       <ul className={styles.bookList}>
         {books.map((book) => (
-          <React.Fragment key={book.id}>
+          <React.Fragment key={book.item_id}>
             <li className={styles.li}>
               <div>
                 <Book
