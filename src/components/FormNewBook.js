@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Form } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { addBook } from '../redux/books/booksSlice';
 
-const FormNewBook = (props) => {
-  const { addBook } = props;
+const FormNewBook = () => {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [message, setMessage] = useState('');
@@ -19,7 +20,7 @@ const FormNewBook = (props) => {
   const handleSubmit = (e) => {
     if (title.trim() && author.trim()) {
       e.preventDefault();
-      addBook(title, author, 'Science');
+      dispatch(addBook({ title, author, category: 'Science' }));
       setMessage('');
       setTitle('');
       setAuthor('');
@@ -54,8 +55,8 @@ const FormNewBook = (props) => {
   );
 };
 
-FormNewBook.propTypes = {
-  addBook: PropTypes.func.isRequired,
-};
+// FormNewBook.propTypes = {
+//   addBook: PropTypes.func.isRequired,
+// };
 
 export default FormNewBook;

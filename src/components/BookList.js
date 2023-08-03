@@ -1,11 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import styles from '../styles/book.module.css';
 
-const BookList = (props) => {
-  const { books, delBook } = props;
-
+const BookList = () => {
+  const books = useSelector((store) => store.book.books);
   return (
     <div>
       <ul className={styles.bookList}>
@@ -15,7 +15,6 @@ const BookList = (props) => {
               <div>
                 <Book
                   book={book}
-                  delBook={delBook}
                 />
               </div>
             </li>
@@ -24,11 +23,6 @@ const BookList = (props) => {
       </ul>
     </div>
   );
-};
-
-BookList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  delBook: PropTypes.func.isRequired,
 };
 
 export default BookList;
