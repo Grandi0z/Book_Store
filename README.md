@@ -49,6 +49,7 @@ The following stacks were used
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Javascript</a></li>
+    <li><a href="https://react-redux.js.org/">React Redux</a></li>
     <li><a href="https://react.dev/t">React</a></li>
     <li><a href="https://webpack.js.org/">Webpack</a></li>
   </ul>

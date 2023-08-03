@@ -5,7 +5,7 @@ class BookObj {
     this.title = title;
     this.author = author;
     this.category = category;
-    this.id = uuidv4();
+    this.item_id = uuidv4();
   }
 }
 
