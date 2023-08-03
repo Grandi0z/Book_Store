@@ -2,14 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const name = 'book';
 const initialState = {
-  books: [
-    {
-      title: 'harry poter',
-      author: 'J L L K',
-      category: 'Fiction',
-      id: '84jjfuet',
-    },
-  ],
+  books: [],
 };
 
 const bookSlice = createSlice({
