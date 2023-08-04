@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form } from 'react-router-dom';
-import { addBook } from '../redux/books/booksSlice';
+import { addNewBook } from '../redux/books/booksSlice';
 import BookObj from '../utils/book';
 
 const FormNewBook = () => {
@@ -21,7 +21,7 @@ const FormNewBook = () => {
   const handleSubmit = (e) => {
     if (title.trim() && author.trim()) {
       e.preventDefault();
-      dispatch(addBook(new BookObj(title, author, 'Science')));
+      dispatch(addNewBook(new BookObj(title, author, 'Science')));
       setMessage('');
       setTitle('');
       setAuthor('');

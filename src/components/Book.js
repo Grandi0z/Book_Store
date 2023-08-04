@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
 import styles from '../styles/book.module.css';
+import { deleteBook } from '../redux/books/booksSlice';
 
 const Book = (props) => {
   const dispatch = useDispatch();
-  const { book } = props;
+  const { book, itemId } = props;
+
   return (
     <div>
       <section className={styles.section}>
@@ -28,7 +29,7 @@ const Book = (props) => {
                 <button
                   type="button"
                   className={styles.actionButtons}
-                  onClick={() => dispatch(removeBook(book.item_id))}
+                  onClick={() => dispatch(deleteBook(itemId))}
                 >
                   Remove
                 </button>
@@ -61,6 +62,7 @@ Book.propTypes = {
     category: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     item_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }).isRequired,
+  itemId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default Book;
