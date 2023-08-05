@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function Root() {
   return (
-    <div className={styles.main}>
+    <div id="root" className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.h1}>Bookstore CMS</h1>
         <nav className={styles.nav}>
@@ -28,7 +28,7 @@ function Root() {
           </button>
         </nav>
       </header>
-      <div className="details">
+      <div className={styles.details}>
         <Outlet />
       </div>
     </div>

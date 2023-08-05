@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Form } from 'react-router-dom';
 import { addNewBook } from '../redux/books/booksSlice';
 import BookObj from '../utils/book';
+import styles from '../styles/form.module.css';
 
 const FormNewBook = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,13 @@ const FormNewBook = () => {
     setAuthor(e.target.value);
   };
 
+  const categories = ['Fiction', 'Science', 'Economy', 'Action'];
+  const category = categories[Math.floor(Math.random() * categories.length)];
+
   const handleSubmit = (e) => {
     if (title.trim() && author.trim()) {
       e.preventDefault();
-      dispatch(addNewBook(new BookObj(title, author, 'Science')));
+      dispatch(addNewBook(new BookObj(title, author, category)));
       setMessage('');
       setTitle('');
       setAuthor('');
@@ -37,6 +41,7 @@ const FormNewBook = () => {
         <input
           type="text"
           placeholder="Book title"
+          className={styles.inputTitle}
           name="title"
           value={title}
           onChange={handleChangeT}
@@ -49,7 +54,7 @@ const FormNewBook = () => {
           onChange={handleChangeA}
           required
         />
-        <input type="submit" />
+        <input type="submit" value="ADD BOOK" className={styles.submit} />
       </Form>
       <span className="submit-warning">{message}</span>
     </div>
