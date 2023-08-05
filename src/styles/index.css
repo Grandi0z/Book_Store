@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Montserrat:ital,wght@0,600;0,700;1,700&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Montserrat:ital,wght@0,600;1,700&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agdasima&family=Montserrat:ital,wght@0,300;0,600;1,700&family=Roboto+Mono&display=swap');
+
 :root {
   --whiteFade: #fafafa;
 }
 
 .App {
   background-color: var(--whiteFade);
+  font-family: 'Montserrat', sans-serif;
+  width: 98%;
+  height: 96%;
 }

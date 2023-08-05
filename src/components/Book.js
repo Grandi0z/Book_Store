@@ -7,15 +7,17 @@ import { deleteBook } from '../redux/books/booksSlice';
 const Book = (props) => {
   const dispatch = useDispatch();
   const { book, itemId } = props;
-
+  const chapters = ['Chapter 1', 'Chapter 17', 'Chapter 8', 'Introduction', 'Chapter 9'];
+  const chapter = chapters[Math.floor(Math.random() * chapters.length)];
+  const perc = Math.floor(Math.random() * 101);
   return (
     <div>
       <section className={styles.section}>
-        <div>
+        <div className={styles.BooInfo}>
           <header>
-            <span>{book.category}</span>
-            <h2 className={styles.h2}>{book.title}</h2>
-            <span>{book.author}</span>
+            <span className={styles.categoryBook}>{book.category}</span>
+            <h2 className={styles.bookTitle}>{book.title}</h2>
+            <span className={styles.bookAuthor}>{book.author}</span>
           </header>
           <div>
             <ul className={styles.actionUl}>
@@ -43,12 +45,20 @@ const Book = (props) => {
             </ul>
           </div>
         </div>
-        <div>completed</div>
+        <div className={styles.progressStatus}>
+          <div className={styles.progressCircleContainer}>
+            <span className={styles.progressCircle} />
+          </div>
+          <div className={styles.completedContainer}>
+            <span className={styles.percentage}>{`${perc}%`}</span>
+            <span>Completed</span>
+          </div>
+        </div>
         <span className={styles.bigLine} />
-        <div>
-          <h4>Current chapter</h4>
-          <p>Chapter 1</p>
-          <button type="button">Update progress</button>
+        <div className={styles.readerState}>
+          <h4 className={styles.currentChapter}>Current chapter</h4>
+          <p className={styles.chapiter}>{chapter}</p>
+          <button type="button" className={styles.buttonUpdate}>Update progress</button>
         </div>
       </section>
     </div>

@@ -1,0 +1,57 @@
+:root {
+  --grey-one: #888;
+  --light: #fff;
+  --grey-dark: #e8e8e8;
+  --dark-one: #121212;
+  --blue-sky: #0290ff;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.18px;
+  color: var(--grey-one);
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  column-gap: 2rem;
+}
+
+input {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--grey-dark);
+  background-color: var(--light);
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  color: var(--dark-one);
+}
+
+input::placeholder {
+  font-weight: 700;
+}
+
+.inputTitle {
+  width: 50%;
+}
+
+.inputAuthor {
+  width: 30%;
+}
+
+.submit {
+  cursor: pointer;
+  width: 20%;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: var(--blue-sky);
+  border: none;
+  letter-spacing: 0.5px;
+  color: var(--light);
+  font-size: 0.813rem;
+  font-weight: 700;
+  font-family: "Roboto Slab", serif;
+}
